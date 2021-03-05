@@ -1,0 +1,8 @@
+#install node js
+#cek nodejs dengan perintah : 
+node -v
+#cek npm dengan perintah : 
+npm -v
+#install express (framework nodejs), mysql, bodyparser (bebas melakukan request (raw, json, data) melalui metode http dengan perintah :
+npm i --save express mysql body-parser
+#install extension expressjs
