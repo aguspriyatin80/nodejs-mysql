@@ -8,12 +8,24 @@ exports.index = function(req,res) {
 }
 
 //menampilkan semua data mahasiswa
-exports.tampil = function(req, res){
-    var data = [];
+exports.mahasiswaAll = function(req, res){
     let sql = "SELECT * FROM mahasiswa";
-    connection.query(sql,data,function(error,rows){
+    connection.query(sql,function(error,rows){
         if(error) {
-            connection.log(error);
+            console.log(error);
+        } else {
+            response.ok(rows,res);
+        }
+    })
+}
+
+//menampilkan data mahasiswa berdasarkan id
+exports.mahasiswaById = function(req, res){
+    let id = req.params.id;
+    let sql = "SELECT * FROM mahasiswa WHERE id_mahasiswa=?";
+    connection.query(sql,[id],function(error,rows){
+        if(error) {
+            console.log(error);
         } else {
             response.ok(rows,res);
         }
