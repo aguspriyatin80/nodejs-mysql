@@ -1,16 +1,15 @@
-var mysql = require('mysql');
+var mysql = require('mysql2');
 
-// buat koneksi database
-const conn = mysql.createConnection({
-    host: 'localhost',
-    user:'root',
-    password:'root',
-    database:'test'
+var conn = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "Abcd123$",
+  database: "test"
 });
 
 conn.connect((err)=>{
-    // if(err) throw err;
-    console.log('Koneksi berhasil');
+    if(err) throw err;
+    console.log('Mysql terkoneksi');
 });
 
 module.exports = conn;
