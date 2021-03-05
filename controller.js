@@ -31,3 +31,18 @@ exports.mahasiswaById = function(req, res){
         }
     })
 }
+
+//menambahkan data mahasiswa
+exports.Create = function(req, res){
+    var nim = req.body.nim;
+    var nama = req.body.nama;
+    var jurusan = req.body.jurusan;
+    let sql = "INSERT INTO mahasiswa(nama,nim,jurusan) VALUES(?,?,?)";
+    connection.query(sql,[nama,nim,jurusan],function(error,rows){
+        if(error) {
+            console.log(error);
+        } else {
+            response.ok("Berhasil menambahkan data",res);
+        }
+    })
+}

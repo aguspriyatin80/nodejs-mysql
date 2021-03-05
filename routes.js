@@ -12,4 +12,7 @@ module.exports = function(app) {
     app.route('/mahasiswa/:id')
     .get(jsonku.mahasiswaById);
 
+    app.route('/mahasiswa')
+    .post(jsonku.Create);
+
 }
