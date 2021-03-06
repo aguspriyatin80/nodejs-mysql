@@ -15,4 +15,13 @@ module.exports = function(app) {
     app.route('/mahasiswa')
     .post(jsonku.Create);
 
+    app.route('/mahasiswa/:id')
+    .put(jsonku.Update);
+    
+    app.route('/mahasiswa/:id')
+    .delete(jsonku.Delete);
+
+    app.route('/matkul-nested')
+    .get(jsonku.matkulNested);
+
 }
